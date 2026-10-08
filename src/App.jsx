@@ -1,14 +1,8 @@
 import { applications } from './applications';
-import StatusBadge from './components/StatusBadge';
-/**
- * The starting point. Right now it dumps the raw data on the page so you can
- * see it is loading — replace all of this with your components.
- *
- * The stylesheet already has classes for everything you need, so you do not
- * have to write any CSS: container, site-header, summary, summary-tile,
- * job-list, job-card, badge, badge-applied (and one per status), page-head,
- * empty.
- */
+import ApplicationList from './components/ApplicationList';
+import Summary from './components/Summary';
+
+/* App holds the application data and passes it to the summary and list. */
 export default function App() {
 	return (
 		<>
@@ -19,8 +13,8 @@ export default function App() {
 			</header>
 
 			<main className="container">
-				<p>{applications.length} applications loaded.</p>
-				<pre>{JSON.stringify(applications[0], null, 2)}</pre>
+				<Summary applications={applications} />
+				<ApplicationList applications={applications}/>
 			</main>
 		</>
 	);
