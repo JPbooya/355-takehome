@@ -1,5 +1,5 @@
 import { applications } from './applications';
-
+import StatusBadge from './components/StatusBadge';
 /**
  * The starting point. Right now it dumps the raw data on the page so you can
  * see it is loading — replace all of this with your components.
